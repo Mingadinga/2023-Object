@@ -15,6 +15,11 @@ public class TicketOffice {
         return tickets.remove(0);
     }
 
+    public void sellTicketTo(Audience audience) {
+        Long ticketFee = audience.buy(getTicket());
+        plusAmount(ticketFee);
+    }
+
     public void minusAmount(Long amount) {
         this.amount -= amount;
     }
